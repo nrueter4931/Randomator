@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+
 * {
     margin: 0px;
     padding: 0px;
@@ -9,7 +11,7 @@ html,
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #16882d;
+    background-color: #35a6af;
 }
 
 .main-container {
@@ -24,12 +26,15 @@ body {
     display: grid;
     grid-template-columns: 1fr 5fr 2fr;
     height: 100%;
+    width: 100%
 }
 
 .row-two {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
 }
 .container-padding {
     margin: 12px;
-    border: 1px dashed #336265;
+    /* border: 1px dashed #336265; */
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
