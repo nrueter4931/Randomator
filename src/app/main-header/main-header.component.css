@@ -6,3 +6,10 @@
     margin-right: 10px;
     background-color: #f7c52b
 }
+.nav-action-container {
+    margin: 20px auto;
+    width: 90%;
+}
+.main-nav {
+    padding: 10px 5%;
+}

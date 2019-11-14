@@ -1,40 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-
-* {
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-}
-
-html,
-body {
-    width: 100vw;
-    height: 100vh;
-    background-color: #35a6af;
-}
-
-.main-container {
-    display: grid;
+html, body {
     height: 100%;
-    grid-template-rows: 1fr 12fr 1fr;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    /* background-image: url(background2.jpg); */
+    background-image: url(background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-.row-one,
-.row-two,
-.row-three {
+.nav-action-container{
+    margin: 20px auto;
+    width: 90%;
+}
+.main-nav {
+    padding: 10px 5%;
+}
+.contact-button{
+    margin: 10px auto;
+    text-align: center;
+}
+.contact-grid{
     display: grid;
-    grid-template-columns: 1fr 5fr 2fr;
-    height: 100%;
-    width: 100%
+    margin: 20px auto;
+    widows: 90%;
+    height: 80vh;
+    max-height: 80vh;
+    overflow: auto;
 }
-
-.row-two {
-    background-color: #ffffff;
+.output-layout{
+    padding-left: 500px auto;
+    padding-right: 500px auto;
+    margin: 10px auto;
+    width: 35%;   
 }
-.container-padding {
-    margin: 12px;
-    /* border: 1px dashed #336265; */
+.password-table {
+    padding-left: 500px auto;
+    padding-right: 500px auto;
+    margin: 10px auto;
+    width: 25%; 
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* .button-layout {
+    width: 110%;
+    text-align: center;
+} */
+.button-length {
+    width: 78px !important;
+}
