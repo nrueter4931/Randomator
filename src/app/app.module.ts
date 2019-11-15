@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 
 import { AppRoutes } from './app.routes';
 import { CoursesComponent } from './courses/courses.component';
+import { HelpComponent } from './help/help.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CoursesComponent } from './courses/courses.component';
     MainFooterComponent,
     MainContentComponent,
     HomeComponent,
-    CoursesComponent
+    CoursesComponent,
+    HelpComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

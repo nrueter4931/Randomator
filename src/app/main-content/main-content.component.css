@@ -1,12 +1,39 @@
-.pull-right {
-    float: right
+/* .nav-action-container{
+    margin: 20px auto;
+    width: 90%;
 }
-.color {
-    background-color: #1ca037
+.main-nav {
+    padding: 10px 5%;
 }
-.edit {
-    background-color: #007bff
+.contact-button{
+    margin: 10px auto;
+    text-align: center;
 }
-.main-outlet {
-    display:none;
+.contact-grid{
+    display: grid;
+    margin: 20px auto;
+    widows: 90%;
+    height: 80vh;
+    max-height: 80vh;
+    overflow: auto;
 }
+.output-layout{
+    width: 5%;
+    padding-left: 500px;
+    padding-right: 500px;
+    margin: 10px auto;
+    width: 85%;   
+}
+.password-table {
+    width: 0%;
+    margin: 10px auto;
+    width: 15%;
+    text-align: center;
+}
+.button-layout {
+    width: 110%;
+    text-align: center;
+}
+.button-length {
+    width: 78px !important;
+} */
