@@ -2,11 +2,18 @@
 <br>
 <div class="input-group mb-3 output-layout ">
   <div class="input-group-prepend">
-    <button class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1">Generate</button>
+    <button (click)="generate()" class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1">Generate</button>
   </div>
-  <input type="text-center" class="form-control" placeholder="Generated Password"
-    aria-label="Example text with button addon" aria-describedby="button-addon1">
-  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1">Add</button>
+
+
+  <table class="form-control">
+    <thead>
+      <tr>
+        <th scope="col">{{tempPassword}}</th>
+      </tr>
+    </thead>
+  </table>
+  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1">Save</button>
 </div>
 <div class="input-group mb-3 output-layout">
   <div class="input-group-prepend">
@@ -25,25 +32,9 @@
     <thead>
     </thead>
     <tbody>
-      <tr>
-        <th class="table table-bordered" scope="row">Password 1</th>
+      <tr *ngFor="let password of passwordArray; let i = index">
+        <th class="table table-bordered" scope="row">{{password.generatedPassword}}</th>
         <button type="button" class="btn btn-danger contact-button center-block ">X</button>
-      </tr>
-      <tr>
-        <th scope="row">Password 2</th>
-        <button type="button" class="btn btn-danger contact-button">X</button>
-      </tr>
-      <tr>
-        <th scope="row">Password 3</th>
-        <button type="button" class="btn btn-danger contact-button">X</button>
-      </tr>
-      <tr>
-        <th scope="row">Password 4</th>
-        <button type="button" class="btn btn-danger contact-button">X</button>
-      </tr>
-      <tr>
-        <th scope="row ">Password 5</th>
-        <button type="button" class="btn btn-danger contact-button">X</button>
       </tr>
     </tbody>
   </table>

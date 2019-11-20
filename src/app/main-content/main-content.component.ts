@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PasswordClass } from './main-content.model';
 
 
 @Component({
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.css']
 })
+
+
+
 export class MainContentComponent implements OnInit {
 
 
@@ -16,11 +20,20 @@ export class MainContentComponent implements OnInit {
   static numbList: Array<string> = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   static specialList: Array<string> = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '`', '-', '=', '{', '}',
     '|', '[', ']', '\\', ': ', '"', ';', '\'', '<', '>', '?', ',', '.', '/'];
+  passwordArray: Array<PasswordClass> = [
+    { ID: 1, generatedPassword: 'one' },
+    { ID: 2, generatedPassword: 'two' },
+    { ID: 3, generatedPassword: 'three' }];
   passwordToTest: string = '';
   passwordLabel: string = 'Waiting...';
+  tempPassword: string = 'nothing'
   constructor() { }
 
   ngOnInit() {
+  }
+
+  generate() {
+    this.tempPassword = 'testy123';
   }
 
   testPassword(passwordToTest) {
@@ -41,31 +54,27 @@ export class MainContentComponent implements OnInit {
     while (capLength--) {
       if (this.passwordToTest.indexOf(caps[capLength]) !== -1) {
         findCap = true;
-        passwordScore++;
       }
     }
     while (lowLength--) {
       if (this.passwordToTest.indexOf(lows[lowLength]) !== -1) {
         findLow = true;
-        passwordScore++;
       }
     }
     while (numbLength--) {
       if (this.passwordToTest.indexOf(numbs[numbLength]) !== -1) {
         findNumb = true;
-        passwordScore++;
       }
     }
     while (specialLength--) {
       if (this.passwordToTest.indexOf(specials[specialLength]) !== -1) {
         findSpecial = true;
-        passwordScore++;
       }
     }
-    
-    
-    
-    
+    if (findCap === true) { passwordScore++; }
+    if (findLow === true) { passwordScore++; }
+    if (findNumb === true) { passwordScore++; }
+    if (findSpecial === true) { passwordScore++; }
     if (passwordToTest.length > 7) {
       passwordScore++;
     }
@@ -74,7 +83,7 @@ export class MainContentComponent implements OnInit {
     console.log('from testPassword: findCap:', findCap, 'findLow:', findLow, 'findNumb:', findNumb, 'findSpecial:', findSpecial);
     console.log('from testPassword: passwordScore:', passwordScore);
 
-    switch(true) {
+    switch (true) {
       case passwordScore === 5: {
         this.passwordLabel = 'Excellent!';
         break;
