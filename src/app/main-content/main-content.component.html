@@ -2,19 +2,22 @@
 <br>
 <div class="input-group mb-3 output-layout ">
   <div class="input-group-prepend">
-    <button (click)="generate()" class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1">Generate</button>
+    <button class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1" (click)="password(passwordString)">Generate</button>
   </div>
+  <input type="text" class="form-control" placeholder="Password" aria-label="Example text with button addon" aria-describedby="button-addon1" [(ngModel)]="this.passwordString">
 
-
-  <table class="form-control">
+  <!-- <table class="form-control">
     <thead>
       <tr>
         <th scope="col">{{tempPassword}}</th>
       </tr>
     </thead>
-  </table>
+  </table> -->
   <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1">Save</button>
 </div>
+
+
+
 <div class="input-group mb-3 output-layout">
   <div class="input-group-prepend">
     <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1"

@@ -11,8 +11,48 @@ import { PasswordClass } from './main-content.model';
 
 
 export class MainContentComponent implements OnInit {
+  // password generator
+  static characters: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+    'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0',
+    '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '`', '-', '=', '{', '}', '|', '[', ']',
+    '\\', ':', '"', ';', '\'', '<', '>', '?', ',', '.', '/']
+  static upperCharacters: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+    'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  static lowerCharacters: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+    'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  static numbers: Array<string> = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  static specialCharacters: Array<string> = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_',
+    '+', '`', '-', '=', '{', '}', '|', '[', ']', '\\', ':', '"', ';', '\'', '<', '>', '?', ',', '.', '/']
+  passwordLength = 4;
+  passwordLength2 = 1;
+  passwordString = '';
+  upperGen = '';
+  lowerGen = '';
+  numberGen = '';
+  specialGen = '';
+  charactersGen = '';
+  ngOnInit() {
+  }
+  password() {
 
+    for (let i = 0; i < this.passwordLength2; i++) {
+      this.upperGen += MainContentComponent.upperCharacters[Math.floor((Math.random() * MainContentComponent.upperCharacters.length))];
+      this.lowerGen += MainContentComponent.lowerCharacters[Math.floor((Math.random() * MainContentComponent.lowerCharacters.length))];
+      this.numberGen += MainContentComponent.numbers[Math.floor((Math.random() * MainContentComponent.numbers.length))];
+      this.specialGen += MainContentComponent.specialCharacters
+      [Math.floor((Math.random() * MainContentComponent.specialCharacters.length))];
+    }
+    for (let i = 0; i < this.passwordLength; i++) {
+      this.charactersGen += MainContentComponent.characters[Math.floor(Math.random() * MainContentComponent.characters.length)];
+    }
 
+    this.passwordString += this.upperGen + this.lowerGen + this.numberGen + this.specialGen + this.charactersGen;
+    return this.passwordString;
+  }
+
+  // strength tester 
   static capList: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
     'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   static lowList: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -27,10 +67,6 @@ export class MainContentComponent implements OnInit {
   passwordToTest: string = '';
   passwordLabel: string = 'Waiting...';
   tempPassword: string = 'nothing'
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   generate() {
     this.tempPassword = 'testy123';
@@ -111,4 +147,6 @@ export class MainContentComponent implements OnInit {
     }
   }
 }
+const Password = new MainContentComponent();
+console.log(Password.password());
 
