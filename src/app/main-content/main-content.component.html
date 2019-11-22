@@ -2,7 +2,7 @@
 <br>
 <div class="input-group mb-3 output-layout ">
   <div class="input-group-prepend">
-    <button class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1" (click)="password()">Generate</button>
+    <button class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1" (click)="password(passwordString)"><mat-icon>autorenew</mat-icon></button>
   </div>
   <input type="text" class="form-control" placeholder="Password" aria-label="Example text with button addon" aria-describedby="button-addon1" 
   [(ngModel)]="this.passwordString">
@@ -14,7 +14,7 @@
       </tr>
     </thead>
   </table> -->
-  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1">Save</button>
+  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1"><mat-icon>save_alt</mat-icon></button>
 </div>
 
 
@@ -22,7 +22,7 @@
 <div class="input-group mb-3 output-layout">
   <div class="input-group-prepend">
     <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1"
-      (click)="testPassword(passwordToTest)">Submit</button>
+      (click)="testPassword(passwordToTest)"><mat-icon>search</mat-icon></button>
   </div>
   <input type="text" class="form-control" placeholder="Test Your Password Here"
     aria-label="Example text with button addon" aria-describedby="button-addon1" [(ngModel)]="passwordToTest">
@@ -38,7 +38,10 @@
     <tbody>
       <tr *ngFor="let password of passwordArray; let i = index">
         <th class="table table-bordered" scope="row">{{password.generatedPassword}}</th>
-        <button type="button" class="btn btn-danger contact-button center-block ">X</button>
+        <div class="btn-group">
+        <button type="button" class="btn btn-danger contact-button center-block "><mat-icon>delete</mat-icon></button>
+        <button type="button" class="btn btn-warning contact-button center-block "><mat-icon>edit</mat-icon></button>
+        </div>
       </tr>
     </tbody>
   </table>
