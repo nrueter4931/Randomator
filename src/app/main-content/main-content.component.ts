@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { PasswordClass } from './main-content.model';
 
-
+interface IValid {
+  lowerCase: boolean;
+  upperCase: boolean;
+  numbers: boolean;
+  specialCharacters: boolean;
+  length: number;
+}
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
   styleUrls: ['./main-content.component.css']
 })
-
-
-
 export class MainContentComponent implements OnInit {
   // password generator
   static characters: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
@@ -33,6 +36,17 @@ export class MainContentComponent implements OnInit {
   numberGen = '';
   specialGen = '';
   charactersGen = '';
+
+  validation: IValid = {
+    lowerCase: false,
+    upperCase: false,
+    numbers: false,
+    specialCharacters: false,
+    length: 0,
+  };  // lowerCase, upperCase,numbers,specialCharacters,length
+  constructor() {
+
+  }
   ngOnInit() {
   }
   password() {
@@ -115,6 +129,11 @@ export class MainContentComponent implements OnInit {
       passwordScore++;
     }
 
+    this.validation.lowerCase = findLow;
+    this.validation.upperCase = findCap;
+    this.validation.numbers = findNumb;
+    this.validation.specialCharacters = findSpecial;
+    this.validation.length = passwordToTest.length;
 
     console.log('from testPassword: findCap:', findCap, 'findLow:', findLow, 'findNumb:', findNumb, 'findSpecial:', findSpecial);
     console.log('from testPassword: passwordScore:', passwordScore);
