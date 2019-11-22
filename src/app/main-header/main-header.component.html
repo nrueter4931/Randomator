@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary main-nav">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-info main-nav">
   <a class="navbar-brand" [routerLink]="['main-content']">Randomator</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,13 +8,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['main-content']">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['main-content']"><mat-icon>home</mat-icon><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['about-us']">About Us <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['about-us']"><mat-icon>info</mat-icon><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['help']">Help<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['help']"><mat-icon>help</mat-icon><span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
