@@ -45,6 +45,7 @@ export class MainContentComponent implements OnInit {
   specialGen = '';
   charactersGen = '';
   shuffledPassword: Array<string> = [];
+  shuffledPasswordString: string = '';
 
   validation: IValid = {
     lowerCase: false,
@@ -60,6 +61,7 @@ export class MainContentComponent implements OnInit {
   ngOnInit() {
   }
   
+
   password() {
     this.passwordString = '';
     this.charactersGen = '';
@@ -87,12 +89,14 @@ export class MainContentComponent implements OnInit {
       ranNums.push(numsArray[j]);
       numsArray.splice(j, 1);
     }
-    
-
+    ranNums.forEach((value) => {
+      this.shuffledPassword.unshift(this.passwordString.charAt(value));
+    });
+    this.shuffledPasswordString = this.shuffledPassword.join('');
     console.log('ranNums is: ', ranNums);
     console.log('passwordString is: ', this.passwordString);
-    console.log('shuffled password is: ', this.shuffledPassword);
-    return this.shuffledPassword;
+    console.log('shuffled password is: ', this.shuffledPasswordString);
+    return this.shuffledPasswordString;
 
   }
 
