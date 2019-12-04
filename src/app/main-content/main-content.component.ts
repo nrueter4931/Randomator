@@ -29,9 +29,8 @@ export class MainContentComponent implements OnInit {
     '|', '[', ']', '\\', ': ', '"', ';', '\'', '<', '>', '?', ',', '.', '/'];
   // hardcoded for now
   passwordArray: Array<PasswordClass> = [
-    { ID: 1, generatedPassword: 'one' },
-    { ID: 2, generatedPassword: 'two' },
-    { ID: 3, generatedPassword: 'three' }];
+    {generatedPassword: 'Password'}
+  ];
 
   passwordToTest: string = '';
   passwordLabel: string = 'Waiting...';
@@ -188,6 +187,16 @@ export class MainContentComponent implements OnInit {
         break;
       }
     }
+  }
+
+  savePassword(shuffledPasswordString) {
+    this.passwordArray.unshift({generatedPassword: shuffledPasswordString});
+    console.log('from savePassword, this.shuffledPasswordString = ', shuffledPasswordString);
+  }
+
+  deletePassword(i) {
+    console.log('index', i);
+    this.passwordArray.splice(i, 1);
   }
 }
 const Password = new MainContentComponent();

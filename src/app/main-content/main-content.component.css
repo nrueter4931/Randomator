@@ -46,3 +46,15 @@
     padding-right: 30px;
 }
 
+.password-table {
+    width: 80%;
+}
+
+.custom-header {
+    width: 80%;
+    margin: auto;
+    font-size: larger;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
