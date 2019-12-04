@@ -50,10 +50,4 @@ html, body {
 .button-length {
     width: 78px !important;
 }
-.statusbox {
-    color: lightcoral;
-    /* padding-left: 500px auto;
-    padding-right: 500px auto;
-    margin: 10px auto;
-    width: 25%;  */
-}
+

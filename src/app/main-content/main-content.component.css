@@ -37,3 +37,7 @@
 .button-length {
     width: 78px !important;
 } */
+.statusbox {
+    /* margin: 100px 4 77; */
+    justify-content: center;
+}  

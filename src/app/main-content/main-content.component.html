@@ -2,10 +2,13 @@
 <br>
 <div class="input-group mb-3 output-layout ">
   <div class="input-group-prepend">
-    <button class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1" (click)="password()"><mat-icon>autorenew</mat-icon></button>
+    <button class="btn btn-primary btn-sm btn-block button-length " type="button" id="button-addon1"
+      (click)="password()">
+      <mat-icon>autorenew</mat-icon>
+    </button>
   </div>
-  <input type="text" class="form-control" placeholder="Password" aria-label="Example text with button addon" aria-describedby="button-addon1" 
-  [(ngModel)]="this.passwordString">
+  <input type="text" class="form-control" placeholder="Password" aria-label="Example text with button addon"
+    aria-describedby="button-addon1" [(ngModel)]="this.passwordString">
 
   <!-- <table class="form-control">
     <thead>
@@ -14,7 +17,9 @@
       </tr>
     </thead>
   </table> -->
-  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1"><mat-icon>save_alt</mat-icon></button>
+  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1">
+    <mat-icon>save_alt</mat-icon>
+  </button>
 </div>
 
 
@@ -22,7 +27,9 @@
 <div class="input-group mb-3 output-layout">
   <div class="input-group-prepend">
     <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1"
-      (click)="testPassword(passwordToTest)"><mat-icon>search</mat-icon></button>
+      (click)="testPassword(passwordToTest)">
+      <mat-icon>search</mat-icon>
+    </button>
   </div>
   <input type="text" class="form-control" placeholder="Test Your Password Here"
     aria-label="Example text with button addon" aria-describedby="button-addon1" [(ngModel)]="passwordToTest">
@@ -30,8 +37,31 @@
     <span class="input-group-text" id="basic-addon2">{{passwordLabel}}</span>
   </div>
 </div>
-<br>
-<br>
+
+
+<form class="was-validated statusbox font-weight-bold form-row align-items-center">
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+    <label class="custom-control-label" for="customControlValidation1">Upercase</label>
+  </div>
+  <div class="custom-control custom-checkbox ">
+    <input type="checkbox" class="custom-control-input" id="customControlValidation2" required>
+    <label class="custom-control-label" for="customControlValidation2">Lowercase</label>
+  </div>
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customControlValidation3" required>
+    <label class="custom-control-label" for="customControlValidation3">Number</label>
+  </div>
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customControlValidation4" required>
+    <label class="custom-control-label" for="customControlValidation4">Special Characters</label>
+  </div>
+  </form>
+  
+  
+  
+  <br>
+
 <div>
   <table class=" table-bordered table-striped password-table text-center">
     <thead>
@@ -40,8 +70,12 @@
       <tr *ngFor="let password of passwordArray; let i = index">
         <th class="table table-bordered" scope="row">{{password.generatedPassword}}</th>
         <div class="btn-group">
-        <button type="button" class="btn btn-danger contact-button center-block "><mat-icon>delete</mat-icon></button>
-        <button type="button" class="btn btn-warning contact-button center-block "><mat-icon>edit</mat-icon></button>
+          <button type="button" class="btn btn-danger contact-button center-block ">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button type="button" class="btn btn-warning contact-button center-block ">
+            <mat-icon>edit</mat-icon>
+          </button>
         </div>
       </tr>
     </tbody>
