@@ -58,3 +58,8 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+.button-extra-space {
+    padding-left: 36px;
+    padding-right: 36px;
+}

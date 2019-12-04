@@ -10,13 +10,6 @@
   <input type="text" class="form-control" placeholder="Password" aria-label="Example text with button addon"
     aria-describedby="button-addon1" [(ngModel)]="this.shuffledPasswordString">
 
-  <!-- <table class="form-control">
-    <thead>
-      <tr>
-        <th scope="col">{{tempPassword}}</th>
-      </tr>
-    </thead>
-  </table> -->
   <button (click)="savePassword(shuffledPasswordString)" class="btn btn-success btn-sm btn-block button-length"
     type="button" id="button-addon1">
     <mat-icon>save_alt</mat-icon>
@@ -78,17 +71,33 @@
   </div>
   <table class=" table-bordered table-striped password-table text-center">
     <tbody>
-      <tr *ngFor="let password of passwordArray; let i = index">
-        <th class="table table-bordered" scope="row">{{password.generatedPassword}}</th>
-        <div class="btn-group">
-          <button type="button" class="btn btn-danger contact-button center-block ">
-            <mat-icon (click)="deletePassword(i)">delete</mat-icon>
-          </button>
-          <button type="button" class="btn btn-warning contact-button center-block ">
-            <mat-icon>edit</mat-icon>
-          </button>
-        </div>
-      </tr>
+      <div>
+        <tr *ngFor="let password of passwordArray; let i = index">
+
+          <th *ngIf="password.edit === false" class="table table-bordered" scope="row">
+            {{password.generatedPassword}}
+          </th>
+          <th *ngIf="password.edit === true" class="table table-bordered" scope="row">
+              <input type="text" class="form-control" placeholder="Test Your Password Here"
+              aria-label="Example text with button addon" aria-describedby="button-addon1" 
+              [(ngModel)]="password.generatedPassword">
+          </th>
+
+          <div *ngIf="password.edit === false" class="btn-group">
+            <button type="button" class="btn btn-danger contact-button center-block ">
+              <mat-icon (click)="deletePassword(i)">delete</mat-icon>
+            </button>
+            <button type="button" class="btn btn-warning contact-button center-block ">
+              <mat-icon (click)="editPassword(i)">edit</mat-icon>
+            </button>
+          </div>
+          <div *ngIf="password.edit === true" class="btn-group">
+              <button type="button" class="btn btn-success contact-button center-block button-extra-space">
+                  <mat-icon (click)="saveEditedPassword(i)">save_alt</mat-icon>
+                </button>
+            </div>
+        </tr>
+      </div>
     </tbody>
   </table>
 </div>
