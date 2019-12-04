@@ -40,21 +40,25 @@
 
 
 <form class="was-validated statusbox font-weight-bold form-row align-items-center">
-  <div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+  <div class="custom-control custom-checkbox checkbox-padding">
+    <input [(ngModel)]="validation.upperCase" name="cappycaps" type="checkbox" class="custom-control-input" id="customControlValidation1" required>
     <label class="custom-control-label" for="customControlValidation1">Upercase</label>
   </div>
-  <div class="custom-control custom-checkbox ">
-    <input type="checkbox" class="custom-control-input" id="customControlValidation2" required>
+  <div class="custom-control custom-checkbox checkbox-padding">
+    <input [(ngModel)]="validation.lowerCase" name="lowylows" type="checkbox" class="custom-control-input" id="customControlValidation2" required>
     <label class="custom-control-label" for="customControlValidation2">Lowercase</label>
   </div>
-  <div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="customControlValidation3" required>
+  <div class="custom-control custom-checkbox checkbox-padding">
+    <input [(ngModel)]="validation.numbers" name="numbies" type="checkbox" class="custom-control-input" id="customControlValidation3" required>
     <label class="custom-control-label" for="customControlValidation3">Number</label>
   </div>
-  <div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="customControlValidation4" required>
-    <label class="custom-control-label" for="customControlValidation4">Special Characters</label>
+  <div class="custom-control custom-checkbox checkbox-padding">
+    <input [(ngModel)]="validation.specialCharacters" name="speshuls" type="checkbox" class="custom-control-input" id="customControlValidation4" required>
+    <label class="custom-control-label" for="customControlValidation4">Special Character</label>
+  </div>
+  <div class="custom-control custom-checkbox checkbox-padding">
+    <input [(ngModel)]="validation.length" name="muchlong" type="checkbox" class="custom-control-input" id="customControlValidation4" required>
+    <label class="custom-control-label" for="customControlValidation4">Password Length</label>
   </div>
   </form>
   

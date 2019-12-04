@@ -41,3 +41,8 @@
     /* margin: 100px 4 77; */
     justify-content: center;
 }  
+
+.checkbox-padding {
+    padding-right: 30px;
+}
+
