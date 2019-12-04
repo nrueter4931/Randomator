@@ -1,11 +1,11 @@
 interface Ipassword {
-    ID: number;
     generatedPassword: string;
+    edit: boolean;
 }
 
 export class PasswordClass {
-    public ID: number;
     public generatedPassword: string;
+    public edit: boolean;
 
     constructor(thePassword: Ipassword) {
         Object.assign(this, thePassword);

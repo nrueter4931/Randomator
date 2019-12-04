@@ -19,7 +19,7 @@ export class MainContentComponent implements OnInit {
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0',
     '1', '2', '3', '4', '5', '6', '7', '8', '9',
     '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '`', '-', '=', '{', '}', '|', '[', ']',
-    '\\', ':', '"', ';', '\'', '<', '>', '?', ',', '.', '/']
+    '\\', ':', '"', ';', '\'', '<', '>', '?', ',', '.', '/'];
   static capList: Array<string> = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
     'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   static lowList: Array<string> = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -29,9 +29,8 @@ export class MainContentComponent implements OnInit {
     '|', '[', ']', '\\', ': ', '"', ';', '\'', '<', '>', '?', ',', '.', '/'];
   // hardcoded for now
   passwordArray: Array<PasswordClass> = [
-    { ID: 1, generatedPassword: 'one' },
-    { ID: 2, generatedPassword: 'two' },
-    { ID: 3, generatedPassword: 'three' }];
+    { generatedPassword: 'Password', edit: false }
+  ];
 
   passwordToTest: string = '';
   passwordLabel: string = 'Waiting...';
@@ -61,7 +60,7 @@ export class MainContentComponent implements OnInit {
   }
   ngOnInit() {
   }
-  
+
 
   password() {
     this.passwordString = '';
@@ -189,6 +188,27 @@ export class MainContentComponent implements OnInit {
       }
     }
   }
+
+  savePassword(shuffledPasswordString) {
+    this.passwordArray.unshift({ generatedPassword: shuffledPasswordString, edit: false });
+    console.log('from savePassword, this.shuffledPasswordString = ', shuffledPasswordString);
+  }
+
+  deletePassword(i) {
+    console.log('index', i);
+    this.passwordArray.splice(i, 1);
+  }
+
+  editPassword(i) {
+    this.passwordArray[i].edit = true;
+    console.log('passwordToEdit: ', this.passwordArray[i]);
+  }
+
+  saveEditedPassword(i) {
+    this.passwordArray[i].edit = false;
+  }
+
+
 }
 const Password = new MainContentComponent();
 console.log(Password.password());
