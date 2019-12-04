@@ -6,7 +6,7 @@ interface IValid {
   upperCase: boolean;
   numbers: boolean;
   specialCharacters: boolean;
-  length: number;
+  length: boolean;
 }
 @Component({
   selector: 'app-main-content',
@@ -47,12 +47,13 @@ export class MainContentComponent implements OnInit {
   shuffledPassword: Array<string> = [];
   shuffledPasswordString: string = '';
 
+
   validation: IValid = {
     lowerCase: false,
     upperCase: false,
     numbers: false,
     specialCharacters: false,
-    length: 0,
+    length: false,
   };
 
   constructor() {
@@ -152,7 +153,11 @@ export class MainContentComponent implements OnInit {
     this.validation.upperCase = findCap;
     this.validation.numbers = findNumb;
     this.validation.specialCharacters = findSpecial;
-    this.validation.length = passwordToTest.length;
+    if (passwordToTest.length > 7) {
+      this.validation.length = true;
+    } else {
+      this.validation.length = false;
+    }
 
     console.log('from testPassword: findCap:', findCap, 'findLow:', findLow, 'findNumb:', findNumb, 'findSpecial:', findSpecial);
     console.log('from testPassword: passwordScore:', passwordScore);
