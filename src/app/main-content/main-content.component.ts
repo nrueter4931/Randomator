@@ -45,8 +45,6 @@ export class MainContentComponent implements OnInit {
   charactersGen = '';
   shuffledPassword: Array<string> = [];
   shuffledPasswordString: string = '';
-
-
   validation: IValid = {
     lowerCase: false,
     upperCase: false,
