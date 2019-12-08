@@ -17,9 +17,7 @@
       </tr>
     </thead>
   </table> -->
-  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1">
-    <mat-icon>save_alt</mat-icon>
-  </button>
+  <button class="btn btn-success btn-sm btn-block button-length" type="button" id="button-addon1" (click)="savePassword(i)"><mat-icon>save_alt</mat-icon></button>
 </div>
 
 
@@ -70,10 +68,8 @@
       <tr *ngFor="let password of passwordArray; let i = index">
         <th class="table table-bordered" scope="row">{{password.generatedPassword}}</th>
         <div class="btn-group">
-          <button type="button" class="btn btn-danger contact-button center-block ">
-            <mat-icon>delete</mat-icon>
-          </button>
-          <button type="button" class="btn btn-warning contact-button center-block ">
+          <button type="button" class="btn btn-danger contact-button center-block" (click)="deletePassword(i)"><mat-icon>delete</mat-icon></button>
+          <button type="button" class="btn btn-warning contact-button center-block">
             <mat-icon>edit</mat-icon>
           </button>
         </div>
